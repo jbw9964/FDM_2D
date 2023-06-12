@@ -188,9 +188,9 @@ Output :
 ```
 (estimated time can be differ by computer performance.)
 
-Note that you should set proper `dt`. In finite element method at transient heat transfer, [$\mathrm{Fourier \ number}$](https://en.wikipedia.org/wiki/Fourier_number) is important factor. 
+Note that you should set proper `dt`. In finite element method at transient heat transfer, [Fourier number](https://en.wikipedia.org/wiki/Fourier_number) is important factor. 
 
-In `FEM_2D`, [$\mathrm{Fourier \ number}$](https://en.wikipedia.org/wiki/Fourier_number), is defined as $\mathrm{Fo = \frac{\alpha\Delta t}{dx*dy}}$. Also in `FEM_2D` we calculate every nodes via 4 adjacent node, which implies $\mathrm{1 - 4Fo \geq 0}$ to satisfy analystic stability.
+In `FEM_2D`, [Fourier number](https://en.wikipedia.org/wiki/Fourier_number), is defined as $\mathrm{Fo = \frac{\alpha\Delta t}{dx*dy}}$. Also in `FEM_2D` we calculate every nodes via 4 adjacent node, which implies $\mathrm{1 - 4Fo \geq 0}$ to satisfy analystic stability.
 
 If you want details about it, check the [reference](#reference) - `p.330 ~ 334`.
 
@@ -252,7 +252,7 @@ Test_fin.compute_steady_state(dt, tol, max_iter, save_process)
     <img src="./images/compute_steady_state1.gif" style="height :300px" alt="compute_steady_state" title="compute_steady_state">
 </p>
 
-Ther precision in each interation is defined as $\mathrm{\vert \frac{T^{t}_{average} \ - \ T^{t-1}_{average}}{dt} \vert}$. So in iteration if $\mathrm{\vert \frac{T^{t}_{average} \ - \ T^{t-1}_{average}}{dt} \vert \leq tolerance}$, we assume it reaches steady state.
+Ther precision in each interation is defined as $\mathrm{\vert \frac{(T_{avg}^{t}) \ - \ (T_{avg}^{t-1})}{dt} \vert }$. So in iteration if $\mathrm{\vert \frac{T_{avg}^{t} \ - \ T_{avg}^{t-1}}{dt} \vert \leq tolerance}$, we assume it reaches steady state.
 
 ---
 Above computation `compute_dt`, `compute`, `compute_steady_state` only calculate mesh, so we can save computation. However one might want to visualize the calculation process.
