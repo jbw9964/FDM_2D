@@ -178,14 +178,15 @@ dt = 0.01
 T_end = 10
 Test_fin.is_good(dt, T_end)
 ```
-```python
-Output : 
-[Safe to compute]
-	==> [3570]        nodes to calculate.
-	==> [1000]        frames to repeat
-	==> [3.57e+06]    times to calculate.
-	==> [5m 57.0s]    estimated.
-```
+
+
+    Output : 
+    [Safe to compute]
+        ==> [3570]        nodes to calculate.
+        ==> [1000]        frames to repeat
+        ==> [3.57e+06]    times to calculate.
+        ==> [5m 57.0s]    estimated.
+
 (estimated time can be differ by computer performance.)
 
 Note that you should set proper `dt`. In finite element method at transient heat transfer, [Fourier number](https://en.wikipedia.org/wiki/Fourier_number) is important factor. 
@@ -202,16 +203,15 @@ dt = 50         # too large dt
 T_end = 1000
 Test_fin.is_good(dt, T_end)
 ```
-```python
-Output : 
-     79 self.__Fo = self.__alpha * dt / (self.dx * self.dy)
-     81 if 1 - 4 * self.__Fo < 0 : 
----> 82     raise ArithmeticError("Fourier number has to be small enough : [{}]".format(1 - 4 * self.__Fo))
-     84 self.__is_safe(1)
-     85 self.__is_safe(2)
 
-ArithmeticError: Fourier number has to be small enough : [-0.9571399999999994]
-```
+    Output : 
+        79 self.__Fo = self.__alpha * dt / (self.dx * self.dy)
+        81 if 1 - 4 * self.__Fo < 0 : 
+    ---> 82     raise ArithmeticError("Fourier number has to be small enough : [{}]".format(1 - 4 * self.__Fo))
+        84 self.__is_safe(1)
+        85 self.__is_safe(2)
+
+    ArithmeticError: Fourier number has to be small enough : [-0.9571399999999994]
 
 Since `Fo = alpha * dt / (dx * dy)`, you need to decrease `dt` or increase mesh size `dx`, `dy` at [`FEM_2D(X,Y,dx,dy)`](#2-set-meshs-boundary).
 
@@ -296,12 +296,10 @@ Test_fin.compute(T_end, dt, save_process=False)
 Test_fin.plot_process('--')
 ```
 
-```python
-Output : 
-Computing mesh... [\][=================================================> ][98/100]			
-Computing has been finished.
-Mesh is on initial state. No process has been excuted.
-```
+    Output : 
+    Computing mesh... [\][=================================================> ][98/100]			
+    Computing has been finished.
+    Mesh is on initial state. No process has been excuted.
 
 If not, you can plot the process.
 ```python
@@ -309,24 +307,22 @@ Test_fin.compute_steady_state(dt)
 Test_fin.plot_process('--')
 ```
 
-```python
-Output : 
-[Safe to compute]
-	==> [1276]        nodes to calculate.
-	==> [999499]      frames to repeat
-	==> [1.28e+09]    times to calculate.
-	==> [35h 25m 36.1s] estimated.
-Computing mesh... [/] --> [AVG temperature : 45.54612][>                             ][4524/1000000]			
+    Output : 
+    [Safe to compute]
+        ==> [1276]        nodes to calculate.
+        ==> [999499]      frames to repeat
+        ==> [1.28e+09]    times to calculate.
+        ==> [35h 25m 36.1s] estimated.
+    Computing mesh... [/] --> [AVG temperature : 45.54612][>                             ][4524/1000000]			
 
-Temperature has been converged.
-[11.40750] sec to converge.
+    Temperature has been converged.
+    [11.40750] sec to converge.
 
-Precision : [9.976020010071807e-10]
-	==> previous temperature :  [45.54612]               
-	==> current temperature :  [45.54612]               
+    Precision : [9.976020010071807e-10]
+        ==> previous temperature :  [45.54612]               
+        ==> current temperature :  [45.54612]               
 
-Computing has been finished.
-```
+    Computing has been finished.
 
 <p align="center">
     <img src="./images/temperature_time.png" style="height :300px" alt="plot_process" title="plot_process">
@@ -342,10 +338,8 @@ You can save the mseh and computation process, using `save_result` method.
 Test_fin.save_result(file_name)
 ```
 
-```python
-Output : 
-T_mesh has been saved at : [{current directory}/file_name.npz]
-```
+    Output : 
+    T_mesh has been saved at : [{current directory}/file_name.npz]
 
 You can import the result using `import_result` method. You can import the result as a `np.array` or you can replace mesh grid to given `file`.
 
@@ -353,10 +347,8 @@ You can import the result using `import_result` method. You can import the resul
 Test_fin.import_result(file="{file_name}.npz", replace_model=True)
 ```
 
-```shell
-Output : 
-Mesh and result has been replaced by imported data.
-```
+    Output : 
+    Mesh and result has been replaced by imported data.
 
 Given file `.npz` should have specific keyword, `process_time`, `process_avg`, `T_mesh`.
 
