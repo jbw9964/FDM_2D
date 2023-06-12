@@ -192,12 +192,10 @@ Note that you should set proper `dt`. In finite element method at transient heat
 
 In `FEM_2D`, [$\mathrm{Fourier \ number}$](https://en.wikipedia.org/wiki/Fourier_number), is defined as $\mathrm{Fo = \frac{\alpha\Delta t}{dx*dy}}$. Also in `FEM_2D` we calculate every nodes via 4 adjacent node, which implies $\mathrm{1 - 4Fo \geq 0}$ to satisfy analystic stability.
 
-If you want details about it, check the reference^[1] `p.330 - 334`.
+If you want details about it, check the [reference](#reference) - `p.330 ~ 334`.
 
-######################################################
+
 If you set improper `dt`, it would raise `ArithmeticError`, and shows current `Fo`. For example,
-######################################################
-
 
 ```python
 dt = 50         # too large dt
@@ -376,7 +374,4 @@ Test_fin.plot_process()
 </p>
 
 ## Reference
-<a id="1">[1]</a> 
-Bergman, T. L., and Frank P. Incropera. Fundamentals of Heat and Mass Transfer. Seventh edition. Wiley, 2011, 
-
-[^1] : Bergman, T. L., and Frank P. Incropera. Fundamentals of Heat and Mass Transfer. Seventh edition. Wiley, 2011.
+Bergman, T. L., and Frank P. Incropera. Fundamentals of Heat and Mass Transfer. Seventh edition. Wiley, 2011.
