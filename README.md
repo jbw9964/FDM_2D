@@ -365,5 +365,10 @@ Test_fin.plot_process()
     <img src="./images/import_result.png" style="height :300px" alt="import_result" title="import_result">
 </p>
 
+## Final report and detail explanation
+The presentation and final report is located at [`presentation`](./presentation/) and [`final report`](./presentation/final%20report/) folder.
+
+[`final report`](./presentation/final%20report/%EC%A0%84%EC%82%B0%EB%AC%BC%EB%A6%AC%20%EA%B8%B0%EB%A7%90%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf) describes the our work flow, our process, and idea of structuring model. However it's written in korean.
+
 ## Reference
 Bergman, T. L., and Frank P. Incropera. Fundamentals of Heat and Mass Transfer. Seventh edition. Wiley, 2011.
