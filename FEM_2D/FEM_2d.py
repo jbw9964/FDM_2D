@@ -122,6 +122,9 @@ class FEM_2D() :
         self.T_mesh = np.zeros_like(self.__mesh_grid, dtype=float) + T_inf
 
     def set_rect(self, x_mid_cord, L, H) : 
+        assert (x_mid_cord - L / 2 > 0) and (x_mid_cord + L / 2 < self.X), AssertionError("Rectnagle is out of mesh")
+        assert H < self.Y, AssertionError("Rectnagle is out of mesh")
+        
         self.__is_built()
         self.__mesh.set_rect(x_mid_cord, L, H)
         self.__mesh_type = "RECT"
@@ -341,7 +344,7 @@ class FEM_2D() :
         self.__mesh_process_time.append(self.time)
         self.__mesh_process_avg.append(np.average(self.T_mesh[self.__mesh_index]))
 
-    def compute_dt(self, dt, save_process=False, save_init=False) : 
+    def compute_dt(self, dt, save_process=True, save_init=False) : 
         self.__is_built()
         self.__Fo = self.__alpha * dt / (self.dx * self.dy)
 
@@ -476,7 +479,7 @@ class FEM_2D() :
 
         self.save_process() if save_process else None
 
-    def compute(self, t_end, dt, save_process=False) : 
+    def compute(self, t_end, dt, save_process=True) : 
         t_init = self.time
         total_num = int((t_end - t_init) / dt)
         self.save_process() if save_process else None
