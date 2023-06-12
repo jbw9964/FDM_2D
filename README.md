@@ -270,7 +270,7 @@ So there are 3 method to animate the process.
 Test_fin.Animate(t_end, dt, save_process, file_name)
 ```
 <p align="center">
-    <img src="./images/Circle_fin_fasten.gif" style="height :300px" alt="Animate_fasten" title="Animate_fasten">
+    <img src="./images/Rect_fin_fasten.gif" style="height :300px" alt="Animate_fasten" title="Animate_fasten">
 </p>
 
 Those methods use [`FuncAnimation`](https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html) of [`Matplotlib`](https://matplotlib.org/stable/index.html) library to animate process.
