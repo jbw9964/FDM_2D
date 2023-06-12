@@ -42,7 +42,7 @@ Test_fin = FEM_2D(*args)
 Before you define mesh, you should define the boundary.
 
 ```python
-Test_fin = FEM_2(X=x_max, Y=y_max, dx=unit_x, dy=unit_y)
+Test_fin = FEM_2D(X=x_max, Y=y_max, dx=unit_x, dy=unit_y)
 ```
 
 Here `X` represent the maximum boundary of mesh along X axis, and `Y` represent the maximum of Y axis.
