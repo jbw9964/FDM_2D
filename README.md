@@ -1,5 +1,5 @@
 
-# Fin analysis using finite element method (FEM)
+# Fin analysis using finite difference method (FDM)
 - github repository for computational physics, final project [2023.06.14]
 
 # How to use it
